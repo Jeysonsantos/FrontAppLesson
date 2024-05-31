@@ -1,0 +1,63 @@
+# Virtual environments
+venv/
+env/
+venv
+virtualenv/
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+cache
+node_modules
+cache
+
+# Local development settings
+local_settings.py
+
+# Database
+db.sqlite3
+
+# Static files
+staticfiles/
+migrations/
+migrations
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+
+/data/
+data/
+
+# Arquivos gerados pelo comando 'ng build'
+/dist/
+
+# Dependências instaladas pelo npm
+/node_modules/
+
+# Arquivo de configuração do ambiente
+/src/environments/environment.ts
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários
+*.tmp
+
+# Arquivos de backup
+*~
+
+# Arquivos de mapa de origem gerados
+*.map
+
+# Arquivos de dependências do sistema
+Thumbs.db
+.DS_Store

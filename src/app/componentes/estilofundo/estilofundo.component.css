@@ -1,0 +1,45 @@
+.logo {
+  filter: invert(1) brightness(2);
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.toolbar-item-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background-color: #009c59;
+}
+.app-container {
+  height: 90%;
+  margin: 0;
+}  
+.app-sidenav {
+  width: 230px;
+
+}
+.app-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+} 
+
+.imagem-fundo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(100%) opacity(.2);
+}
+.imagem-fundo img {
+  width: 50%; 
+  height: auto; 
+  position: absolute;
+  top:30px;
+  right: auto;
+  z-index: 0;
+}
+mat-sidenav-container {
+  background-color: #EEEEEE;
+}

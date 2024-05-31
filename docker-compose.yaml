@@ -1,0 +1,11 @@
+version : '3.7'
+
+services:
+  front:
+    container_name: angular-front
+    ports:
+      - "4200:80"
+    build: .
+    volumes:
+      - ./src/app:/app
+    command: ["nginx", "-g", "daemon off;"]

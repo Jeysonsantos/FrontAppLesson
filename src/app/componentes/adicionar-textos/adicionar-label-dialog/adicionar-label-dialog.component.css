@@ -1,0 +1,41 @@
+
+  .dialog-content {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+  .dialog-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .form-field {
+    width: 100%;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+
+  /* Definir a classe para criar as linhas */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px; /* Adicione espaço negativo para compensar o espaço extra nas bordas */
+}
+
+/* Definir a classe para criar as colunas */
+.form-group {
+  flex: 1;
+  padding: 19px; /* Adicione espaçamento interno entre os campos */
+}
+
+/* Ocupar toda a largura da coluna em telas menores */
+@media (max-width: 767px) {
+  .form-group {
+    flex-basis: 100%;
+  }
+}

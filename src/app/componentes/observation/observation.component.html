@@ -1,0 +1,39 @@
+
+
+<div class="container">
+    <form (ngSubmit)="processarDados()" [formGroup]="valorCampo">
+        <label for="campoInput">Campo de Entrada (Observation):</label>
+        <textarea id="campoInput" formControlName="campoInput" placeholder="Observation"></textarea>
+  
+        <div *ngIf="valorCampo.get('campoInput')?.invalid && valorCampo.get('campoInput')?.touched">
+            <p>O campo de entrada é obrigatório</p>
+        </div>
+        <button type="submit" [disabled]="valorCampo.invalid">Enviar</button>
+    </form>
+  </div>
+  
+  
+  <div class="container">
+    <div class="container-header">
+      10 {{respostaAPI.tipo_elementos}} mais semelhantes são:
+    </div>
+    <div class="container-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Texto</th>
+            <th>Percentual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of respostaAPI.elementos_list">
+            <td>{{ item.descricao_elemento }} <a (click)="handleClick(item)" class="custom-link">(Lesson)<mat-icon></mat-icon></a></td>
+            <td>{{ item.percentual }}%</td>
+          </tr>          
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
+  

@@ -1,0 +1,18 @@
+<mat-dialog-content class="dialog-content">
+        <h1 mat-dialog-title class="dialog-title">{{ title }}</h1>
+        <form [formGroup]="form">
+            <div class="form-group col-md-4">
+                <mat-form-field class="form-field">
+                  <mat-label>Digite a Label</mat-label>
+                  <input matInput formControlName="label">
+                </mat-form-field>
+              </div>
+        </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+    <button mat-button mat-dialog-close>CANCELAR</button>
+    <button mat-button color="primary" [disabled]="form.invalid" (click)="submitForm()">
+        SALVAR
+    </button>
+  </mat-dialog-actions>

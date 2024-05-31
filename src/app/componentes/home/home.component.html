@@ -1,0 +1,53 @@
+<div class="container">
+    <form [formGroup]="dados">
+        <h1 class="titulo" style="text-align: center;">Adicionar Dados</h1>
+
+        <mat-form-field class="texto" style="display: flex;">
+            <mat-label>Campo de Entrada:</mat-label>
+            <textarea matInput id="campoInput" formControlName="texto" placeholder="Digite seu texto aqui"></textarea>
+        </mat-form-field>
+        
+        <div class="field-wrapper">
+
+            <mat-form-field class="select2">
+                <mat-label>Selecione a Label</mat-label>
+                <input type="text" matInput [formControl]="myControl_label" [matAutocomplete]="auto">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let option_label of filteredOptions_label | async" [value]="option_label">{{ option_label }}</mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+
+
+            <button mat-button class="small-button2" style="color: rgb(255, 255, 255);" (click)="atualizarLabels()" [disabled]="myControl_label.value === ''">Adicionar Label</button>
+            <button mat-button class="small-button2" style="color: rgb(255, 255, 255);" (click)="openDialogCriarLabel()">Cria Nova Label</button>
+            
+                <!-- Divisão vertical -->
+            <div class="vertical-line">Tipo:</div>
+            <mat-radio-group aria-label="Select an option" (change)="atualizarTipo($event)">
+                <mat-radio-button *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</mat-radio-button>
+            </mat-radio-group>
+
+            <!-- <button mat-button class="small-button" style="color: rgb(255, 255, 255);" (click)="openDialogCriarTipo()">Adicionar Tipo</button>-->                              
+
+        </div>
+        <div class="label-select">
+            <h2>Labels Selecionadas : </h2>
+            <ul>
+                <li *ngFor="let selectedLabel of selectedLabels" class="label-item">
+                    {{ selectedLabel }}
+                    <button mat-icon-button (click)="removerLabel(selectedLabel)" class="remove-button">
+                        <mat-icon aria-label="Remove">close</mat-icon>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        
+        <div *ngIf="dados.get('texto')?.invalid && dados.get('texto')?.touched">
+        </div>
+        
+        <button mat-button type="submit" (click)="processarDados()" [disabled]="dados.invalid"
+            style="color: rgb(255, 255, 255);">Cadastrar</button>
+
+    </form>
+
+</div>
