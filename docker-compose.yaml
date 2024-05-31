@@ -2,7 +2,7 @@ version : '3.7'
 
 services:
   front:
-    container_name: angular-front
+    container_name: FrontAppLesson
     ports:
       - "4200:80"
     build: .
